@@ -8,3 +8,15 @@ const estudos = {
   'Sábado': { manha: '', tarde: '', noite: '' },
   'Domingo': { manha: '', tarde: '', noite: '' }
 };
+function adicionarAtividade() {
+    const dia = document.getElementById('dia').value;
+    const periodo = document.getElementById('periodo').value;
+    const atividade = document.getElementById('atividade').value;
+    
+    if (!atividade) return;
+  
+    estudos[dia][periodo] = atividade;
+    document.getElementById('atividade').value = ''; // Limpar o campo
+  
+    atualizarEstudos();
+  }
