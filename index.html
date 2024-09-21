@@ -7,6 +7,47 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
+    <div class="app-container">
+        <h1>Gerenciador de Estudos 2024</h1>
+    
+        <div class="input-container">
+          <label for="dia">Dia:</label>
+          <select id="dia">
+            <option value="Segunda-feira">Segunda-feira</option>
+            <option value="Terça-feira">Terça-feira</option>
+            <option value="Quarta-feira">Quarta-feira</option>
+            <option value="Quinta-feira">Quinta-feira</option>
+            <option value="Sexta-feira">Sexta-feira</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
+          </select>
+    
+          <label for="periodo">Período:</label>
+          <select id="periodo">
+            <option value="manha">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+          </select>
+    
+          <label for="atividade">O que estudar:</label>
+          <input type="text" id="atividade" placeholder="Ex: Matemática">
+    
+          <button onclick="adicionarAtividade()">Adicionar Estudo</button>
+        </div>
+    
+        <div id="estudos">
+          <table id="tabela-estudos">
+            <thead>
+              <tr>
+                <th>Dia</th>
+                <th>Período</th>
+                <th>Atividade</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
     <script src="app.js"></script>
 </body>
 </html>
