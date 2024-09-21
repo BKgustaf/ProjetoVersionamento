@@ -20,3 +20,35 @@ function adicionarAtividade() {
   
     atualizarEstudos();
   }
+  function atualizarEstudos() {
+  const container = document.getElementById('estudos');
+  container.innerHTML = ''; // Limpar antes de redesenhar
+
+  diasDaSemana.forEach(dia => {
+    const diaDiv = document.createElement('div');
+    diaDiv.classList.add('dia-container');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = dia;
+    diaDiv.appendChild(h2);
+
+    const manhaDiv = document.createElement('div');
+    manhaDiv.classList.add('periodo-container');
+    manhaDiv.innerHTML = `<strong>Manhã:</strong> ${estudos[dia].manha}`;
+    diaDiv.appendChild(manhaDiv);
+
+    const tardeDiv = document.createElement('div');
+    tardeDiv.classList.add('periodo-container');
+    tardeDiv.innerHTML = `<strong>Tarde:</strong> ${estudos[dia].tarde}`;
+    diaDiv.appendChild(tardeDiv);
+
+    const noiteDiv = document.createElement('div');
+    noiteDiv.classList.add('periodo-container');
+    noiteDiv.innerHTML = `<strong>Noite:</strong> ${estudos[dia].noite}`;
+    diaDiv.appendChild(noiteDiv);
+
+    container.appendChild(diaDiv);
+  });
+}
+
+atualizarEstudos();
